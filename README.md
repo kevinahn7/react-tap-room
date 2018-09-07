@@ -9,6 +9,9 @@
 A web app to have a virtual tap room to see which drinks are on tap.
 Differences in development between React and Angular:
 
+##Component Structure  
+![Component Structure image](src/assets/component-structure.png)
+
 
 ## User Stories
 
