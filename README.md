@@ -6,9 +6,9 @@
 
 ## Description
 
-A web app to have a virtual tap room to see which drinks are on tap.
+A web app to have a virtual tap room to see which drinks are on tap.  
 Differences in development between React and Angular:  
-* In Angular, you can easily make a tempalte with ``ng new [project name]``
+* In Angular, you can easily make a template with ``ng new [project name]``
 * In React, you can use CSS objects
 * In React, you can write using JSX, in Angular, you can write in TypeScript
 * React utilizes the virtual DOM so it is faster
