@@ -8,14 +8,18 @@ function Keg(prop) {
         border: "1px black solid"
     }
 
+    let nameStyle = {
+        fontSize: "30px"
+    }
+
 	return(
 		<div style={kegStyle}>
-			<h3>{prop.name}</h3>
-			<h3>{prop.brewer}</h3>
-            <h3>{prop.abv}</h3>
-            <h3>{prop.description}</h3>
-            <h3>{prop.price}</h3>
-            <h3>{prop.remaining}</h3>
+			<h3 style={nameStyle}>{prop.name}</h3>
+			<h3>Brewer: {prop.brewer}</h3>
+            <h3>ABV: {prop.abv}</h3>
+            <h3>Description: {prop.description}</h3>
+            <h3>Price: {prop.price}</h3>
+            <h3>Remaining: {prop.remaining}</h3>
 		</div>
 	)
 }

@@ -13,7 +13,8 @@ function Kegs(props) {
         margin: "0 auto",
         display: "grid",
         gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
-        padding: "20px"
+        padding: "20px",
+        gridGap: "5px"
     }
 	return (
 		<div style={kegsStyle}>
