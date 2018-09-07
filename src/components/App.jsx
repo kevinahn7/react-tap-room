@@ -1,6 +1,7 @@
 import React from "react";
 import Kegs from './Kegs';
 import Error404 from './Error404';
+import Home from './Home';
 import { Switch, Route, Link } from 'react-router-dom';
 import NewKeg from './NewKeg';
 
@@ -72,11 +73,12 @@ class App extends React.Component {
     return (
       <div>
         <h1>React Tap Room</h1>
-        <Link to="/">Home</Link> | <Link to="/newkeg">Create Keg</Link>
+        <Link to="/">Home</Link> | <Link to="/kegs">All Kegs</Link> | <Link to="/newkeg">Create Keg</Link>
         <Switch>
-        <Route exact path='/' render={()=><Kegs kegs={this.state.masterKegList} />}  />
-        <Route path='/newkeg' render={()=><NewKeg onNewKegCreation={this.handleAddingNewKegToList} />} />
-        <Route component={Error404} />
+          <Route exact path='/' component={Home} />
+          <Route exact path='/kegs' render={()=><Kegs kegs={this.state.masterKegList} />}  />
+          <Route path='/newkeg' render={()=><NewKeg onNewKegCreation={this.handleAddingNewKegToList} />} />
+          <Route component={Error404} />
         </Switch>
       </div>
     );
