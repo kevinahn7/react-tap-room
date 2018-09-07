@@ -75,27 +75,46 @@ class App extends React.Component {
     let appStyling = {
       textAlign: "center",
       backgroundImage: "url('https://americantaphouse.com/wp-content/uploads/2016/03/taps-with-hand-background.jpg')",
-      height: "100%",
       backgroundSize: "cover",
-	  	backgroundAttachment: "fixed"
+      backgroundAttachment: "fixed"
     }
 
     let headingStyle = {
       backgroundColor: "rgba(255, 255, 255, 0.7)",
-      padding: "30px"
+      position: "absolute",
+      width: "80%",
+      margin: "20px auto",
+      left: "0",
+      right: "0",
+      padding: "20px 0"
     }
+
+    let bodyStyles = {
+      height: "100%",
+      paddingTop: "160px",
+      boxSizing: "border-box",
+      width: "80%",
+      margin: "0 auto"
+    }
+
+    let linkStyles = {
+      fontSize: "20px"
+    }
+
     return (
       <div style={appStyling}>
         <div style={headingStyle}>
           <h1>React Tap Room</h1>
-          <Link to="/">Home</Link> | <Link to="/kegs">All Kegs</Link> | <Link to="/newkeg">Create Keg</Link>
+          <span style={linkStyles}><Link to="/">Home</Link></span> | <span style={linkStyles}><Link to="/kegs">All Kegs</Link></span> | <span style={linkStyles}><Link to="/newkeg">Create Keg</Link></span>
         </div>
-        <Switch>
-          <Route exact path='/' component={Home} />
-          <Route exact path='/kegs' render={()=><Kegs kegs={this.state.masterKegList} />}  />
-          <Route path='/newkeg' render={()=><NewKeg onNewKegCreation={this.handleAddingNewKegToList} />} />
-          <Route component={Error404} />
-        </Switch>
+        <div style={bodyStyles}>
+          <Switch>
+            <Route exact path='/' component={Home} />
+            <Route exact path='/kegs' render={()=><Kegs kegs={this.state.masterKegList} />}  />
+            <Route path='/newkeg' render={()=><NewKeg onNewKegCreation={this.handleAddingNewKegToList} />} />
+            <Route component={Error404} />
+          </Switch>
+        </div>
       </div>
     );
   }
