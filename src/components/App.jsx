@@ -69,9 +69,14 @@ class App extends React.Component {
     this.setState({masterKegList: newMasterKegList});
   }
 
+
+
   render() {
+    let center = {
+      textAlign: "center"
+    }
     return (
-      <div>
+      <div style={center}>
         <h1>React Tap Room</h1>
         <Link to="/">Home</Link> | <Link to="/kegs">All Kegs</Link> | <Link to="/newkeg">Create Keg</Link>
         <Switch>

@@ -12,7 +12,7 @@ function Keg(prop) {
             <h3>{prop.price}</h3>
             <h3>{prop.remaining}</h3>
 		</div>
-	)
+	);
 }
 
 Keg.propTypes = {
