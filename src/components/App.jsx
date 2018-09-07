@@ -72,13 +72,24 @@ class App extends React.Component {
 
 
   render() {
-    let center = {
-      textAlign: "center"
+    let appStyling = {
+      textAlign: "center",
+      backgroundImage: "url('https://americantaphouse.com/wp-content/uploads/2016/03/taps-with-hand-background.jpg')",
+      height: "100%",
+      backgroundSize: "cover",
+	  	backgroundAttachment: "fixed"
+    }
+
+    let headingStyle = {
+      backgroundColor: "rgba(255, 255, 255, 0.7)",
+      padding: "30px"
     }
     return (
-      <div style={center}>
-        <h1>React Tap Room</h1>
-        <Link to="/">Home</Link> | <Link to="/kegs">All Kegs</Link> | <Link to="/newkeg">Create Keg</Link>
+      <div style={appStyling}>
+        <div style={headingStyle}>
+          <h1>React Tap Room</h1>
+          <Link to="/">Home</Link> | <Link to="/kegs">All Kegs</Link> | <Link to="/newkeg">Create Keg</Link>
+        </div>
         <Switch>
           <Route exact path='/' component={Home} />
           <Route exact path='/kegs' render={()=><Kegs kegs={this.state.masterKegList} />}  />
