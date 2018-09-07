@@ -20,42 +20,60 @@ function NewKeg(props){
     _remaining.value = '';
   }
 
+  let formStyle = {
+    padding: "20px",
+  }
+
+  let inputStyle = {
+    display: "block",
+    width: "60%",
+    margin: "0 auto",
+    textAlign: "center",
+    height: "30px"
+  }
+
 
   return (
-    <div>
+    <div style={formStyle}>
       <form onSubmit={handleNewKegFormSubmission}>
         <input
+          style={inputStyle}
           type='text'
           id='names'
           placeholder='Name'
           ref={(input) => {_names = input;}}/>
         <input
+          style={inputStyle}
           type='text'
           id='brewer'
           placeholder='Brewer'
           ref={(input) => {_brewer = input;}}/>
         <input
+          style={inputStyle}
           type='text'
           id='abv'
           placeholder='ABV'
           ref={(input) => {_abv = input;}}/>
         <input
+          style={inputStyle}        
           type='text'
           id='description'
           placeholder='Description'
           ref={(input) => {_description = input;}}/>
         <input
+          style={inputStyle}
           type='text'
           id='price'
           placeholder='Price'
           ref={(input) => {_price = input;}}/>
         <input
+          style={inputStyle}
           type='text'
           id='remaining'
           placeholder='Remaining'
           ref={(input) => {_remaining = input;}}/>
         
-        <button type='submit'>Make new Keg</button>
+        <button style={inputStyle} type='submit'>Make new Keg</button>
       </form>
     </div>
   );
