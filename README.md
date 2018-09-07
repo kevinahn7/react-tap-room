@@ -7,7 +7,11 @@
 ## Description
 
 A web app to have a virtual tap room to see which drinks are on tap.
-Differences in development between React and Angular:
+Differences in development between React and Angular:  
+* In Angular, you can easily make a tempalte with ``ng new [project name]``
+* In React, you can use CSS objects
+* In React, you can write using JSX, in Angular, you can write in TypeScript
+* React utilizes the virtual DOM so it is faster
 
 ## Component Structure  
 ![Component Structure image](src/assets/component-structure.png)
@@ -60,7 +64,9 @@ Differences in development between React and Angular:
 
 ## Notes
 
-The biggest difference from the beginning is that Angular is a framework and React is a library. So Angular helps you with setup and React does not as much.
+The biggest difference from the beginning is that Angular is a framework and React is a library. So Angular helps you with setup and React does not as much.  
+What is the easiest way to use CSS across components.  
+
 
 ## License
 
