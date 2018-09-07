@@ -7,6 +7,8 @@
 ## Description
 
 A web app to have a virtual tap room to see which drinks are on tap.
+Differences in development between React and Angular:
+
 
 ## User Stories
 
@@ -52,6 +54,10 @@ A web app to have a virtual tap room to see which drinks are on tap.
 ## Links
 
 * [Github Repo] (https://github.com/kevinahn7/react-tap-room)
+
+## Notes
+
+The biggest difference from the beginning is that Angular is a framework and React is a library. So Angular helps you with setup and React does not as much.
 
 ## License
 
