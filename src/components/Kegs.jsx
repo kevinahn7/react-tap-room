@@ -10,7 +10,10 @@ function Kegs(props) {
         overflow: "auto",
         height: "70%",
         width: "80%",
-        margin: "0 auto"
+        margin: "0 auto",
+        display: "grid",
+        gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+        padding: "20px"
     }
 	return (
 		<div style={kegsStyle}>

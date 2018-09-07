@@ -3,8 +3,13 @@ import PropTypes from 'prop-types';
 
 function Keg(prop) {
 
+
+    let kegStyle = {
+        border: "1px black solid"
+    }
+
 	return(
-		<div>
+		<div style={kegStyle}>
 			<h3>{prop.name}</h3>
 			<h3>{prop.brewer}</h3>
             <h3>{prop.abv}</h3>
