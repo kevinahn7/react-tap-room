@@ -5,7 +5,8 @@ function Keg(prop) {
     let kegStatus = "";
 
     let kegStyle = {
-        border: "1px black solid"
+        border: "1px black solid",
+        maxHeight: "300px"
     }
 
     let nameStyle = {

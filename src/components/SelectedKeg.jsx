@@ -20,14 +20,15 @@ function SelectedKeg(prop) {
             <h3>Price: ${prop.selectedKeg.price}</h3>
             <h3>Remaining: {prop.selectedKeg.remaining}</h3>
             <button onClick={handleSellPint}>Sell Pint</button>
-            <button>Close</button>
+            <button onClick={prop.closeSelectedKeg}>Close</button>
 		</div>
 	)
 }
 
 SelectedKeg.propTypes = {
    selectedKeg: PropTypes.object,
-   sellPint: PropTypes.func
+   sellPint: PropTypes.func,
+   closeSelectedKeg: PropTypes.func
 }
 
 export default SelectedKeg;
