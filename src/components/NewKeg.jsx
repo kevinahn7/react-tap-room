@@ -26,7 +26,8 @@ function NewKeg(props){
 
   let inputStyle = {
     display: "block",
-    width: "60%",
+    width: "50%",
+    minWidth: "300px",
     margin: "0 auto",
     textAlign: "center",
     height: "30px"

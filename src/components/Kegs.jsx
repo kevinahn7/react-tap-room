@@ -12,6 +12,7 @@ class Kegs extends React.Component {
         this.handleSelectedKeg = this.handleSelectedKeg.bind(this);
         this.sellPintKeg = this.sellPintKeg.bind(this);
         this.handleCloseSelectedKeg = this.handleCloseSelectedKeg.bind(this);
+        this.refillKeg = this.refillKeg.bind(this);
     }
 
     handleSelectedKeg(newSelectedKeg) {
@@ -22,8 +23,15 @@ class Kegs extends React.Component {
         this.setState({selectedKeg: null});
     }
 
+    refillKeg(kegIndex) {
+        this.props.refillKeg(kegIndex);
+        let newSelectedKeg = this.state.selectedKeg;
+        newSelectedKeg.remaining = 248;
+        this.setState({selectedKeg: newSelectedKeg})
+    }
+
     sellPintKeg(kegIndex) {
-        this.props.sellPint(kegIndex)
+        this.props.sellPint(kegIndex);
         let newSelectedKeg = this.state.selectedKeg;
         newSelectedKeg.remaining--;
         this.setState({selectedKeg: newSelectedKeg})
@@ -47,7 +55,7 @@ class Kegs extends React.Component {
 
         let ifSelectedKeg;
         if (this.state.selectedKeg != null) {
-            ifSelectedKeg = <SelectedKeg selectedKeg={this.state.selectedKeg} sellPint={this.sellPintKeg} closeSelectedKeg={this.handleCloseSelectedKeg}/>
+            ifSelectedKeg = <SelectedKeg selectedKeg={this.state.selectedKeg} sellPint={this.sellPintKeg} closeSelectedKeg={this.handleCloseSelectedKeg} refillKeg={this.refillKeg} />
         }
 
         return (
@@ -76,7 +84,8 @@ class Kegs extends React.Component {
 
 Kegs.propTypes = {
     kegs: PropTypes.array,
-    sellPint: PropTypes.func
+    sellPint: PropTypes.func,
+    refillPint: PropTypes.func
 };
 
 
