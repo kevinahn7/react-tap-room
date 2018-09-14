@@ -32,6 +32,11 @@ class Kegs extends React.Component {
             gridGap: "5px"
         }
 
+        let ifSelectedKeg;
+        if (this.state.selectedKeg != null) {
+            ifSelectedKeg = <SelectedKeg selectedKeg={this.state.selectedKeg} sellPint={this.props.sellPint}/>
+        }
+
         return (
             <div style={kegsStyle}>
                 <h1>Kegs</h1>
@@ -51,7 +56,7 @@ class Kegs extends React.Component {
                             />
                     )}
                 </div>
-                <SelectedKeg selectedKeg={this.state.selectedKeg} sellPint={this.props.sellPint}/>
+                {ifSelectedKeg}
             </div>
         );
     }
