@@ -9,6 +9,8 @@ function SelectedKeg(prop) {
         prop.sellPint(prop.selectedKeg.index);
     }
 
+    
+
 	return(
 		<div>
 			<h3>{prop.selectedKeg.name}</h3>
