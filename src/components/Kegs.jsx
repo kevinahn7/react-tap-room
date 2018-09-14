@@ -10,10 +10,18 @@ class Kegs extends React.Component {
             selectedKeg: null
         }
         this.handleSelectedKeg = this.handleSelectedKeg.bind(this);
+        this.sellPintKeg = this.sellPintKeg.bind(this);
     }
 
     handleSelectedKeg(newSelectedKeg) {
         this.setState({selectedKeg: newSelectedKeg});
+    }
+
+    sellPintKeg(kegIndex) {
+        this.props.sellPint(kegIndex)
+        let newSelectedKeg = this.state.selectedKeg;
+        newSelectedKeg.remaining--;
+        this.setState({selectedKeg: newSelectedKeg})
     }
 
 
@@ -34,7 +42,7 @@ class Kegs extends React.Component {
 
         let ifSelectedKeg;
         if (this.state.selectedKeg != null) {
-            ifSelectedKeg = <SelectedKeg selectedKeg={this.state.selectedKeg} sellPint={this.props.sellPint}/>
+            ifSelectedKeg = <SelectedKeg selectedKeg={this.state.selectedKeg} sellPint={this.sellPintKeg}/>
         }
 
         return (
@@ -52,7 +60,6 @@ class Kegs extends React.Component {
                             key = {index}
                             index = {index}
                             onKegSelection = {this.handleSelectedKeg}
-                            sellPint = {this.sellPint}
                             />
                     )}
                 </div>

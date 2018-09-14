@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 function Keg(prop) {
 
-
     let kegStyle = {
         border: "1px black solid"
     }
@@ -13,7 +12,7 @@ function Keg(prop) {
     }
 
     function handleTicketSelection() {
-        prop.onKegSelection({name: prop.name, brewer: prop.brewer, abv: prop.abv, description: prop.description, price: prop.price, remaining: prop.remaining});
+        prop.onKegSelection({name: prop.name, brewer: prop.brewer, abv: prop.abv, description: prop.description, price: prop.price, remaining: prop.remaining, index: prop.index});
     }
 
 	return(
