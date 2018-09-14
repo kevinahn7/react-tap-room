@@ -16,8 +16,6 @@ function Keg(prop) {
 		<div style={kegStyle}>
 			<h3 style={nameStyle}>{prop.name}</h3>
 			<h3>Brewer: {prop.brewer}</h3>
-            <h3>ABV: {prop.abv}</h3>
-            <h3>Description: {prop.description}</h3>
             <h3>Price: {prop.price}</h3>
             <h3>Remaining: {prop.remaining}</h3>
 		</div>
@@ -27,8 +25,6 @@ function Keg(prop) {
 Keg.propTypes = {
     name: PropTypes.string,
     brewer: PropTypes.string,
-    abv: PropTypes.string,
-    description: PropTypes.string,
     price: PropTypes.string,
     remaining: PropTypes.number
 }

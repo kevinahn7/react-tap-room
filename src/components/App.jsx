@@ -90,7 +90,7 @@ class App extends React.Component {
     }
 
     let bodyStyles = {
-      height: "100%",
+      minHeight: "100%",
       paddingTop: "160px",
       boxSizing: "border-box",
       width: "80%",
