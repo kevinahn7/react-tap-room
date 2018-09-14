@@ -9,9 +9,13 @@ class Kegs extends React.Component {
         this.state = {
             selectedKeg: null
         }
+        this.handleSelectedKeg = this.handleSelectedKeg.bind(this);
     }
 
-
+    handleSelectedKeg(newSelectedKeg) {
+        console.log(newSelectedKeg)
+        this.setState({selectedKeg: newSelectedKeg});
+    }
 
 
     render() {
@@ -42,10 +46,11 @@ class Kegs extends React.Component {
                             price = {keg.price}
                             remaining = {keg.remaining}
                             key = {index}
+                            onKegSelection = {this.handleSelectedKeg}
                             />
                     )}
                 </div>
-                <SelectedKeg />
+                <SelectedKeg selectedKeg={this.state.selectedKeg}/>
             </div>
         );
     }

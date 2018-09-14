@@ -12,8 +12,12 @@ function Keg(prop) {
         fontSize: "30px"
     }
 
+    function handleTicketSelection() {
+        prop.onKegSelection({name: prop.name, brewer: prop.brewer, abv: prop.abv, description: prop.description, price: prop.price, remaining: prop.remaining});
+    }
+
 	return(
-		<div style={kegStyle}>
+		<div style={kegStyle} onClick={handleTicketSelection}>
 			<h3 style={nameStyle}>{prop.name}</h3>
 			<h3>Brewer: {prop.brewer}</h3>
             <h3>Price: {prop.price}</h3>
@@ -26,7 +30,8 @@ Keg.propTypes = {
     name: PropTypes.string,
     brewer: PropTypes.string,
     price: PropTypes.string,
-    remaining: PropTypes.number
+    remaining: PropTypes.number,
+    onTicketSelection: PropTypes.func
 }
 
 export default Keg;
