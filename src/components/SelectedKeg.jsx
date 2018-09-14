@@ -12,6 +12,7 @@ function SelectedKeg(prop) {
             <h3>Description: {prop.selectedKeg.description}</h3>
             <h3>Price: {prop.selectedKeg.price}</h3>
             <h3>Remaining: {prop.selectedKeg.remaining}</h3>
+            <button>Sell Pint</button>
 		</div>
 	)
 }
