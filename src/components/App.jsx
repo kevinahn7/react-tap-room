@@ -71,9 +71,11 @@ class App extends React.Component {
   }
   
   sellPint(kegIndex) {
-    let newMasterKegList = this.state.masterKegList.slice();
-    newMasterKegList[kegIndex].remaining--;
-    this.setState({masterKegList: newMasterKegList});
+    if (this.state.masterKegList[kegIndex].remaining > 0) {
+      let newMasterKegList = this.state.masterKegList.slice();
+      newMasterKegList[kegIndex].remaining--;
+      this.setState({masterKegList: newMasterKegList});
+    }
   }
 
 

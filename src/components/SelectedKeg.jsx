@@ -5,7 +5,7 @@ import Keg from './Keg';
 function SelectedKeg(prop) {
 
     function handleSellPint() {
-        console.log(prop.selectedKeg.index)
+        if (prop.selectedKeg.remaining > 0)
         prop.sellPint(prop.selectedKeg.index);
     }
 
@@ -17,7 +17,6 @@ function SelectedKeg(prop) {
             <h3>Description: {prop.selectedKeg.description}</h3>
             <h3>Price: {prop.selectedKeg.price}</h3>
             <h3>Remaining: {prop.selectedKeg.remaining}</h3>
-            <p>index: {prop.selectedKeg.index}</p>
             <button onClick={handleSellPint}>Sell Pint</button>
 		</div>
 	)
