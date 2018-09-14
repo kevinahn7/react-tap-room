@@ -4,7 +4,9 @@ function Home() {
 
     let homeStyle = {
         fontSize: "40px",
-        backgroundColor: "rgba(255, 255, 255, 0.8)"
+		backgroundColor: "rgba(255, 255, 255, 0.8)",
+		padding: "20px",
+		marginTop: "10px"
       }
 
 	return(
