@@ -63,6 +63,7 @@ class App extends React.Component {
     this.handleAddingNewKegToList = this.handleAddingNewKegToList.bind(this);
     this.sellPint = this.sellPint.bind(this);
     this.refillKeg = this.refillKeg.bind(this);
+    this.deleteKeg = this.deleteKeg.bind(this);
   }
 
   handleAddingNewKegToList(newKeg) {
@@ -82,6 +83,14 @@ class App extends React.Component {
   refillKeg(kegIndex) {
     let newMasterKegList = this.state.masterKegList.slice();
     newMasterKegList[kegIndex].remaining = 248;
+    this.setState({masterKegList: newMasterKegList});
+  }
+
+  deleteKeg(kegIndex) {
+    console.log(kegIndex)
+    console.log(this.state.masterKegList)
+    let newMasterKegList = this.state.masterKegList.slice();
+    newMasterKegList.splice(kegIndex, 1);
     this.setState({masterKegList: newMasterKegList});
   }
 
@@ -126,7 +135,7 @@ class App extends React.Component {
         <div style={bodyStyles}>
           <Switch>
             <Route exact path='/' component={Home} />
-            <Route exact path='/kegs' render={()=><Kegs kegs={this.state.masterKegList} sellPint={this.sellPint} refillKeg={this.refillKeg}/>}  />
+            <Route exact path='/kegs' render={()=><Kegs kegs={this.state.masterKegList} sellPint={this.sellPint} refillKeg={this.refillKeg} deleteKeg={this.deleteKeg} />}  />
             <Route path='/newkeg' render={()=><NewKeg onNewKegCreation={this.handleAddingNewKegToList} />} />
             <Route component={Error404} />
           </Switch>
