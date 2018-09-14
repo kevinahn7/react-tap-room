@@ -27,7 +27,7 @@ function Keg(prop) {
 		<div style={kegStyle} onClick={handleTicketSelection}>
 			<h3 style={nameStyle}>{prop.name}</h3>
 			<h3>Brewer: {prop.brewer}</h3>
-            <h3>Price: {prop.price}</h3>
+            <h3>Price: ${prop.price}</h3>
             <h3>Remaining: {prop.remaining}</h3>
             <h3 style={outStyle}>{kegStatus}</h3>
 		</div>
