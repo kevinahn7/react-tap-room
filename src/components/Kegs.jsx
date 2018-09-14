@@ -13,7 +13,6 @@ class Kegs extends React.Component {
     }
 
     handleSelectedKeg(newSelectedKeg) {
-        console.log(newSelectedKeg)
         this.setState({selectedKeg: newSelectedKeg});
     }
 
@@ -46,18 +45,21 @@ class Kegs extends React.Component {
                             price = {keg.price}
                             remaining = {keg.remaining}
                             key = {index}
+                            index = {index}
                             onKegSelection = {this.handleSelectedKeg}
+                            sellPint = {this.sellPint}
                             />
                     )}
                 </div>
-                <SelectedKeg selectedKeg={this.state.selectedKeg}/>
+                <SelectedKeg selectedKeg={this.state.selectedKeg} sellPint={this.props.sellPint}/>
             </div>
         );
     }
 }
 
 Kegs.propTypes = {
-    kegs: PropTypes.array
+    kegs: PropTypes.array,
+    sellPint: PropTypes.func
 };
 
 

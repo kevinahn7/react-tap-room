@@ -61,11 +61,18 @@ class App extends React.Component {
       ]
     };
     this.handleAddingNewKegToList = this.handleAddingNewKegToList.bind(this);
+    this.sellPint = this.sellPint.bind(this);
   }
 
   handleAddingNewKegToList(newKeg) {
     let newMasterKegList = this.state.masterKegList.slice();
     newMasterKegList.push(newKeg);
+    this.setState({masterKegList: newMasterKegList});
+  }
+  
+  sellPint(kegIndex) {
+    let newMasterKegList = this.state.masterKegList.slice();
+    newMasterKegList[kegIndex].remaining--;
     this.setState({masterKegList: newMasterKegList});
   }
 
@@ -100,7 +107,6 @@ class App extends React.Component {
     let linkStyles = {
       fontSize: "20px"
     }
-    console.log(this.state.masterKegList)
 
     return (
       <div style={appStyling}>
@@ -111,7 +117,7 @@ class App extends React.Component {
         <div style={bodyStyles}>
           <Switch>
             <Route exact path='/' component={Home} />
-            <Route exact path='/kegs' render={()=><Kegs kegs={this.state.masterKegList} />}  />
+            <Route exact path='/kegs' render={()=><Kegs kegs={this.state.masterKegList} sellPint={this.sellPint}/>}  />
             <Route path='/newkeg' render={()=><NewKeg onNewKegCreation={this.handleAddingNewKegToList} />} />
             <Route component={Error404} />
           </Switch>

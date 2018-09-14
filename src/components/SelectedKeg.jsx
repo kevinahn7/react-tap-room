@@ -4,6 +4,10 @@ import Keg from './Keg';
 
 function SelectedKeg(prop) {
 
+    function handleSellPint() {
+        this.sellPint(prop.index);
+    }
+
 	return(
 		<div>
 			<h3>{prop.selectedKeg.name}</h3>
@@ -12,13 +16,14 @@ function SelectedKeg(prop) {
             <h3>Description: {prop.selectedKeg.description}</h3>
             <h3>Price: {prop.selectedKeg.price}</h3>
             <h3>Remaining: {prop.selectedKeg.remaining}</h3>
-            <button>Sell Pint</button>
+            <button onClick={handleSellPint}>Sell Pint</button>
 		</div>
 	)
 }
 
 Keg.propTypes = {
-   selectedKeg: PropTypes.object
+   selectedKeg: PropTypes.object,
+   sellPint: PropTypes.func
 }
 
 export default SelectedKeg;
