@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function NewKeg(props){
-  let _names = null;
+  let _name = null;
   let _brewer = null;
   let _abv = null;
   let _description = null;
@@ -11,8 +11,8 @@ function NewKeg(props){
 
   function handleNewKegFormSubmission(event) {
     event.preventDefault();
-    props.onNewKegCreation({names: _names.value, brewer: _brewer.value, abv: _abv.value, description: _description.value, price: _price.value, remaining: parseInt(_remaining.value) });
-    _names.value = '';
+    props.onNewKegCreation({name: _name.value, brewer: _brewer.value, abv: _abv.value, description: _description.value, price: _price.value, remaining: parseInt(_remaining.value) });
+    _name.value = '';
     _brewer.value = '';
     _abv.value = '';
     _description.value = '';
@@ -39,9 +39,9 @@ function NewKeg(props){
         <input
           style={inputStyle}
           type='text'
-          id='names'
+          id='name'
           placeholder='Name'
-          ref={(input) => {_names = input;}}/>
+          ref={(input) => {_name = input;}}/>
         <input
           style={inputStyle}
           type='text'

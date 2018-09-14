@@ -100,6 +100,7 @@ class App extends React.Component {
     let linkStyles = {
       fontSize: "20px"
     }
+    console.log(this.state.masterKegList)
 
     return (
       <div style={appStyling}>
